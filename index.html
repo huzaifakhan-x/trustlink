@@ -340,8 +340,8 @@
 /* WhatsApp Button Styles */
 #whatsapp-button {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 100px; /* Increased to be above Botpress */
+    right: 26px;
     width: 60px;
     height: 60px;
     background-color: #25D366;
@@ -350,7 +350,7 @@
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-    z-index: 1000;
+    z-index: 10000; /* Much higher z-index */
     cursor: pointer;
     transition: all 0.3s ease;
     animation: pulse-whatsapp 2s infinite;
@@ -382,17 +382,17 @@
 /* WhatsApp Tooltip */
 #whatsapp-tooltip {
     position: fixed;
-    bottom: 90px;
-    right: 20px;
+    bottom: 170px; /* Adjusted position */
+    right: 26px;
     background-color: #075E54;
     color: white;
     padding: 8px 12px;
-    border-radius: 8px;
+    border-radius: 6px;
     font-size: 14px;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s, visibility 0.3s;
-    z-index: 1000;
+    z-index: 10000; /* Same high z-index */
     white-space: nowrap;
 }
 
@@ -400,16 +400,20 @@
     content: '';
     position: absolute;
     top: 100%;
-    right: 15px;
+    right: 21px;
     border-width: 5px;
     border-style: solid;
     border-color: #075E54 transparent transparent transparent;
 }
 
-#whatsapp-button:hover + #whatsapp-tooltip {
-    opacity: 1;
-    visibility: visible;
+/* Show tooltip on hover */
+@media (hover: hover) {
+    #whatsapp-button:hover + #whatsapp-tooltip {
+        opacity: 1;
+        visibility: visible;
+    }
 }
+
     </style>
 </head>
 <body class="theme-emerald font-sans scroll-smooth">
